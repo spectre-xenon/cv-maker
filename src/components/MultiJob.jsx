@@ -37,7 +37,7 @@ function MultiItem({ itemArr, setItemArr }) {
           <div key={item} style={{ display: "flex" }}>
             <h1>{item}</h1>
             <button onClick={editButt} value={index}>
-              {item}
+              edit
             </button>
           </div>
         ))}
