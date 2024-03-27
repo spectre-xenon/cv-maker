@@ -17,6 +17,7 @@ function MultiItem({ itemArr, setItemArr }) {
 
   const editButt = (e) => {
     setEditIndex(e.target.value);
+    setInputValue(itemArr[e.target.value]);
     setIsEditing(true);
   };
 
