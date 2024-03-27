@@ -55,9 +55,15 @@ function MultiItem({ itemArr, setItemArr }) {
         onChange={(e) => setInputValue(e.target.value)}
       />
       {!isEditing ? (
-        <button onClick={addItem}>Add</button>
+        <>
+          <button onClick={addItem}>Add</button>
+          <button onClick={() => setIsAdding(false)}>Cancel</button>
+        </>
       ) : (
-        <button onClick={editItem}>Finish</button>
+        <>
+          <button onClick={editItem}>Finish</button>
+          <button onClick={() => setIsEditing(false)}>Cancel</button>
+        </>
       )}
     </>
   );
