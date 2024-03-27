@@ -31,6 +31,12 @@ function MultiItem({ itemArr, setItemArr }) {
     setInputValue("");
   };
 
+  const cancelButt = () => {
+    setIsAdding(false);
+    setIsEditing(false);
+    setInputValue("");
+  };
+
   if (itemArr.length > 0 && !isAdding && !isEditing) {
     return (
       <>
@@ -57,14 +63,12 @@ function MultiItem({ itemArr, setItemArr }) {
       {!isEditing ? (
         <>
           <button onClick={addItem}>Add</button>
-          {itemArr.length > 1 && (
-            <button onClick={() => setIsAdding(false)}>Cancel</button>
-          )}
+          {itemArr.length > 1 && <button onClick={cancelButt}>Cancel</button>}
         </>
       ) : (
         <>
           <button onClick={editItem}>Finish</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
+          <button onClick={cancelButt}>Cancel</button>
         </>
       )}
     </>
