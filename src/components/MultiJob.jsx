@@ -57,7 +57,9 @@ function MultiItem({ itemArr, setItemArr }) {
       {!isEditing ? (
         <>
           <button onClick={addItem}>Add</button>
-          <button onClick={() => setIsAdding(false)}>Cancel</button>
+          {itemArr.length > 1 && (
+            <button onClick={() => setIsAdding(false)}>Cancel</button>
+          )}
         </>
       ) : (
         <>
